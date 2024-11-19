@@ -1,12 +1,16 @@
 {
-  "name": "@pantrist/capacitor-firebase-dynamic-links",
-  "version": "5.0.3",
+  "name": "@nadavhalfon/capacitor-firebase-dynamic-links",
+  "version": "6.0.0",
   "description": "Capacitor Plugin for Firebase Dynamic Links",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "unpkg": "dist/plugin.js",
   "scripts": {
+    "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
+    "verify:ios": "cd ios && pod install && xcodebuild -workspace Plugin.xcworkspace -scheme Plugin && cd ..",
+    "verify:android": "cd android && ./gradlew clean build test && cd ..",
+    "verify:web": "npm run build",
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf -rf ./dist",
     "watch": "tsc --watch",
@@ -19,12 +23,12 @@
   "author": "Nico Lueg (nicolueg@yahoo.de)",
   "license": "MIT",
   "peerDependencies": {
-    "@capacitor/core": "next"
+    "@capacitor/core": "^6.0.0"
   },
   "devDependencies": {
-    "@capacitor/android": "next",
+    "@capacitor/android": "^6.0.0",
     "@capacitor/docgen": "^0.2.0",
-    "@capacitor/ios": "next",
+    "@capacitor/ios": "^6.0.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "rollup": "2.77.2",
@@ -36,7 +40,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "PantristCapacitorFirebaseDynamicLinks.podspec"
+    "NadavHalfonCapacitorFirebaseDynamicLinks.podspec"
   ],
   "keywords": [
     "capacitor",
@@ -53,10 +57,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pantrist-dev/capacitor-firebase-dynamic-links"
+    "url": "https://github.com/nadavhalfon/capacitor-firebase-dynamic-links"
   },
   "bugs": {
-    "url": "https://github.com/Pantrist-dev/capacitor-firebase-dynamic-links/issues"
+    "url": "https://github.com/nadavhalfon/capacitor-firebase-dynamic-links/issues"
   },
-  "homepage": "https://github.com/Pantrist-dev/capacitor-firebase-dynamic-links#readme"
+  "homepage": "https://github.com/nadavhalfon/capacitor-firebase-dynamic-links#readme"
 }

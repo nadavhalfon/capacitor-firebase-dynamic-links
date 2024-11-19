@@ -1,7 +1,7 @@
-# @pantrist/capacitor-firebase-dynamic-links
+# @nadavhalfon/capacitor-firebase-dynamic-links
 
-[![npm version](https://badge.fury.io/js/%40pantrist%2Fcapacitor-firebase-dynamic-links.svg)](https://badge.fury.io/js/%40pantrist%2Fcapacitor-firebase-dynamic-links)
-![npm downloads per month](https://img.shields.io/npm/dm/@pantrist/capacitor-firebase-dynamic-links)
+[![npm version](https://badge.fury.io/js/%nadavhalfon%2Fcapacitor-firebase-dynamic-links.svg)](https://badge.fury.io/js/%nadavhalfon%2Fcapacitor-firebase-dynamic-links)
+![npm downloads per month](https://img.shields.io/npm/dm/@nadavhalfon/capacitor-firebase-dynamic-links)
 
 Capacitor plugin for [Firebase Dynamic Links](https://firebase.google.com/docs/dynamic-links).
 
@@ -10,7 +10,7 @@ Capacitor plugin for [Firebase Dynamic Links](https://firebase.google.com/docs/d
 Firebase, and also this plugin, will work until that day. But it won't be working anymore after that.
 If you plan to implement something similar, you should search for alternatives. I went with [capacitor-branch-deep-links](https://github.com/BranchMetrics/capacitor-branch-deep-links).
 
-## Configuration 
+## Configuration
 
 ### Android
 
@@ -42,13 +42,13 @@ FirebaseDynamicLinksCustomDomains
 
 None
 
-## Example 
+## Example
 
 ```ts
 import {
   FirebaseDynamicLinks,
   LinkConfig,
-} from '@pantrist/capacitor-firebase-dynamic-links';
+} from '@nadavhalfon/capacitor-firebase-dynamic-links';
 
 function createShortLink(): Promise<string> {
    const config: LinkConfig = {
@@ -70,7 +70,7 @@ function listenToDeepLinkOpen() {
 
 <docgen-index>
 
-* [`addListener('deepLinkOpen', ...)`](#addlistenerdeeplinkopen)
+* [`addListener('deepLinkOpen', ...)`](#addlistenerdeeplinkopen-)
 * [`removeAllListeners()`](#removealllisteners)
 * [`createDynamicLink(...)`](#createdynamiclink)
 * [`createDynamicShortLink(...)`](#createdynamicshortlink)
@@ -84,7 +84,7 @@ function listenToDeepLinkOpen() {
 ### addListener('deepLinkOpen', ...)
 
 ```typescript
-addListener(eventName: 'deepLinkOpen', listenerFunc: (data: DeepLinkOpen) => void) => PluginListenerHandle
+addListener(eventName: 'deepLinkOpen', listenerFunc: (data: DeepLinkOpen) => void) => Promise<PluginListenerHandle>
 ```
 
 Adds a listener to the opening of a dynamic link
@@ -94,7 +94,7 @@ Adds a listener to the opening of a dynamic link
 | **`eventName`**    | <code>'deepLinkOpen'</code>                                              | 'deepLinkOpen' for listening to open links             |
 | **`listenerFunc`** | <code>(data: <a href="#deeplinkopen">DeepLinkOpen</a>) =&gt; void</code> | Callback function to be called when the event is fired |
 
-**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 --------------------
 

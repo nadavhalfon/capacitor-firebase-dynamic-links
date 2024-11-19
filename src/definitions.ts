@@ -9,7 +9,7 @@ export interface CapacitorFirebaseDynamicLinksPlugin {
   addListener(
     eventName: 'deepLinkOpen',
     listenerFunc: (data: DeepLinkOpen) => void
-  ): PluginListenerHandle;
+  ): Promise<PluginListenerHandle>;
 
   /**
    * Remove all native listeners for this plugin
